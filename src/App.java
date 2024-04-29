@@ -12,5 +12,22 @@ public class App {
         System.out.print("사칙연산 기호를 입력하세요: ");
         char forchik = sc.next().charAt(0);
 
+        int result = 0; // 변수값을 초기화
+
+        switch (forchik) { // switch문을 사용하여 연산
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+        }
+        System.out.println("결과: " + result);
     }
 }
