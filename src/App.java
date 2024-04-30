@@ -8,7 +8,7 @@ public class App {
         int result = 0; // 변수값을 초기화
         double[] doubleArray = new double[9]; // while 돌고나서 저장되는 값이 인덱스 0번째에만 저장이 되니까
         int index = 0;
-
+        ArrayList<Integer> intList = new ArrayList<>(); //생성자
         while (true) {
 
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -32,10 +32,10 @@ public class App {
                     result = num1 * num2;
                     break;
             }
-            ArrayList<Integer> intList = new ArrayList<>(); //생성자
+
 //           doubleArray[index] = result; // index번째 있는 더블어레이에 결과값을 저장한다.
-            index = index + 1; // index 증가
-           intList.add(result); // 저장된 result값 받기!
+//            index = index + 1; // index 증가
+            intList.add(result); // intList에 resultr값 저장!
 //            if (index > doubleArray.length-1) { // 인덱스는 0~9번까진데 배열 9번째칸 보다 인덱스가 크면
 //                double[] newArray = new double[10]; // 1칸씩 땡긴 값을 저장하는 배열 생성
 //                for (int i = 0; i < 9; i++) { // 1칸씩 이동하면서 저장? 10칸에서 한칸씩 9번땡기기
@@ -53,10 +53,18 @@ public class App {
             if (input.equals("remove")) { // 만약에~ input으로 입력한 것이 remove가 맞으면 실행해라~
                 intList.remove(0); // 0번째 index 삭제!
             }
-            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String text = sc.nextLine();
-            if (text.equals("exit")) {
-                return;
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String input2 = sc.nextLine(); // quiry를 입력하기 위한 입력값 저장
+
+            if (input2.equals("inquiry")) { // 만약에~ input2로 입력한 것이 inquiry가 맞으면 실행해라~
+                for (int i:intList) { // 향상된 for문을 사용하여 intList값 불러오기?
+                    System.out.println(i);
+                }
+
+                System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+                String input3 = sc.nextLine();
+                if (input3.equals("exit")) {
+                }break;
             }
         }
     }
