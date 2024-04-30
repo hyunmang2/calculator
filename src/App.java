@@ -2,8 +2,9 @@ import java.util.*;
 
 
 public class App {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws ArithmeticException {
+        Calculator calculator = new Calculator(); //커큘레이터 객체생성
+        Scanner sc = new Scanner(System.in); //sc객체 생성
 
         int result = 0; // 변수값을 초기화
         double[] doubleArray = new double[9]; // while 돌고나서 저장되는 값이 인덱스 0번째에만 저장이 되니까
@@ -18,24 +19,24 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요: ");
             char forchik = sc.next().charAt(0);
 
-            switch (forchik) { // switch문을 사용하여 연산
-                case '+':
-                    result = num1 + num2;
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '/':
-                    result = num1 / num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-            }
+//            switch (forchik) { // switch문을 사용하여 연산
+//                case '+':
+//                    result = num1 + num2;
+//                    break;
+//                case '-':
+//                    result = num1 - num2;
+//                    break;
+//                case '/':
+//                    result = num1 / num2;
+//                    break;
+//                case '*':
+//                    result = num1 * num2;
+//                    break;
+//            }
 
 //           doubleArray[index] = result; // index번째 있는 더블어레이에 결과값을 저장한다.
 //            index = index + 1; // index 증가
-            intList.add(result); // intList에 resultr값 저장!
+//            intList.add(result); // intList에 resultr값 저장!
 //            if (index > doubleArray.length-1) { // 인덱스는 0~9번까진데 배열 9번째칸 보다 인덱스가 크면
 //                double[] newArray = new double[10]; // 1칸씩 땡긴 값을 저장하는 배열 생성
 //                for (int i = 0; i < 9; i++) { // 1칸씩 이동하면서 저장? 10칸에서 한칸씩 9번땡기기
@@ -45,7 +46,7 @@ public class App {
 //                doubleArray = newArray; // 더블어레이에 있는 값을 쓰고싶다 = 대입!
 //            }
 
-            System.out.println("결과: " + result);
+            System.out.println("결과: " + calculator.calculate(num1, num2,forchik));
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             sc.nextLine(); // remove 입력 전 엔터치고 넘어 가려고
             String input = sc.nextLine(); // remove를 입력하기 위한 입력값 저장
