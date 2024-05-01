@@ -1,3 +1,5 @@
+import jdk.dynalink.Operation;
+
 import java.util.*;
 
 
@@ -14,11 +16,13 @@ public class App {
 
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = Integer.parseInt(sc.next()); // 첫 번째 정수를 전달 받아 num1 변수에 저장
+            calculator.setNum1(num1); // 카큘레이터에 있는 num1에 입력 받은값을 저장
             System.out.print("두 번째 숫자를 입력하세요: ");
             int num2 = Integer.parseInt(sc.next()); // 두 번째 정수를 전달 받아 num2 변수에 저장
+            calculator.setNum2(num2);
             System.out.print("사칙연산 기호를 입력하세요: ");
             char forchik = sc.next().charAt(0);
-
+            calculator.setOperation(forchik);
 //            switch (forchik) { // switch문을 사용하여 연산
 //                case '+':
 //                    result = num1 + num2;
